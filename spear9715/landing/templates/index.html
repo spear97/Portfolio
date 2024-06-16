@@ -1,4 +1,151 @@
 {% extends 'static/static.html' %}
 {% load static %}
 
-{% block img %}<img src="{% static 'imgs/kermit.png' %}" alt="Example Image">{% endblock %}
+{% block title %}Sean Pearce Portfolio{% endblock %}
+
+{% block logo%}<img src="{% static 'imgs/logo.png' %}" class="w3-image" alt="Photo of Me" width="500" height="333">{% endblock %}
+
+{% block stylesheet %}
+<style>
+.w3-round {
+    border-radius: 50%;
+    overflow: hidden; /* Ensures the image stays within the rounded boundaries */
+}
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url("{% static 'imgs/node_globe.gif' %}");
+  min-height: 100%;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+</style>
+{% endblock %}
+
+{% block avatar %}
+<img src="{% static 'imgs/Sean.jpg' %}" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
+{% endblock %}
+
+{% block toplinks %}
+<a href="#home" class="w3-bar-item w3-button">HOME</a>
+<a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+<a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+<a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+{% endblock %}
+
+{% block smallscreen %}
+<a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+<a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+{% endblock %}
+
+{% block skills %}
+<p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
+<div class="w3-light-grey">
+  <div class="w3-container w3-padding-small w3-2019-eclipse w3-center" style="width:85%">85%</div>
+</div>
+{% endblock %}
+
+{% block portfoliogrid %}
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <p>Sentiment Analysis</p>
+      <a href="{% url 'sentiment_index' %}">
+        <img src="{% static 'imgs/brain.gif' %}" style="width:100%; max-width:200px; max-height:160px;" class="w3-hover-opacity w3-round" alt="Sentiment Analysis">
+      </a>
+    </div>
+
+    <div class="w3-col m3">
+      <p>Apartment Database</p>
+      <a href="{% url 'aptdb_index' %}">
+        <img src="{% static 'imgs/apartment.gif' %}" style="width:100%; max-width:200px; max-height:150px;" onclick="" class="w3-hover-opacity w3-round" alt="Apartment Datatbase">
+      </a>
+    </div>
+
+    <!--
+    <div class="w3-col m3">
+      <p>Stock Market Prediction</p>
+      <img src="{% static 'imgs/Stock_prediction.gif' %}" style="width:100%; max-width:200px; max-height:150px;" onclick="" class="w3-hover-opacity" alt="">
+    </div>
+
+    <div class="w3-col m3">
+        <p>Car Dealership Application</p>
+        <img src="{% static 'imgs/car_dealership.gif' %}" style="width:100%; max-width:200px; max-height:150px;" onclick="" class="w3-hover-opacity" alt="">
+    </div>
+    -->
+  </div>
+
+  <div class="w3-row-padding w3-center w3-section">
+    <div class="w3-col m3">
+      <img src="/w3images/p5.jpg" style="width:100%" onclick="" class="w3-hover-opacity" alt="">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p6.jpg" style="width:100%" onclick="" class="w3-hover-opacity" alt="">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p7.jpg" style="width:100%" onclick="" class="w3-hover-opacity" alt="">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p8.jpg" style="width:100%" onclick="" class="w3-hover-opacity" alt="">
+    </div>
+  </div>
+  {% endblock %}
+
+{% block Summary %}
+Howdy all! I'm Sean Pearce, an aspiring professional with a fervor for crafting immersive 
+digital experiences at the intersection of Game Development, Artificial Intelligence, and 
+Computer Graphics. With a solid foundation in IT Consulting, I bring a wealth of experience 
+in Object-Oriented Programming, Linux Development, Python Programming, and Cloud Development 
+just to name a few. This background uniquely positions me to bridge the gap between the strategic 
+demands of clients and the exciting innovations happening in the world of Game Development. I'm 
+enthusiastic about leveraging my expertise to not only deliver tailored IT solutions but also to 
+contribute to the creation of visually stunning and technologically advanced gaming experiences. 
+My fascination with Artificial Intelligence extends beyond the consulting realm. During my 
+undergraduate studies and my tenure in IT Consulting, I have explored and studied the various 
+different ways in which Machine Learning and Large Language Models could be used to bring a more 
+immersive environment for gamers everywhere to interact with. These skills and depth in knowledge 
+provide me a strong foundation for navigating the complexities of integrating AI into gaming environments. 
+{% endblock %}
+
+{% block add %} 
+Additionally, my experience my proficiencies modern-day game development tools such Unreal Engine, Unity, 
+and AutoDesk along with traditional software development skills such as Linux, Python, MFA/SSO, and Cloud 
+Development has positioned me to be able to contribute to the world of Computer Graphics in Game Development. 
+I'm excited about the prospect of blending my consulting insights with my passion for creating visually 
+captivating game environments. As I embark on this exciting journey, I'm eager to connect with professionals 
+who share a similar passion for the convergence of technology and creativity. Whether you're from the IT Consulting 
+sector or the gaming industry, let's explore how our collective expertise can drive innovation and excellence.
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'scripts/landingevents.js' %}"></script>
+{% endblock %}
+
+{% block locationImg %}<img src="{% static 'imgs/binary_cat.gif' %}" class="w3-image w3-round" style="width:100%">{% endblock %}

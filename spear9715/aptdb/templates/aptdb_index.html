@@ -1,4 +1,163 @@
-{% extends 'static/static.html' %}
+{% extends 'static/aptdb_static.html' %}
 {% load static %}
 
-{% block img %}<img src="{% static 'imgs/apartment.png' %}" alt="Example Image">{% endblock %}
+{% block banner %}<img class="w3-image" src="{% static 'imgs/fw_skyline.jpg' %}" alt="The Hotel" style="min-width:1000px" width="1500" height="800">{% endblock %}
+
+{% block links %}
+<a href="{% url 'land_index' %}" class="w3-bar-item w3-button w3-red w3-mobile"><i class="w3-margin-right"></i>Home</a>
+<a href="{% url 'sentiment_index' %}" class="w3-bar-item w3-button w3-mobile">Sentiment Analysis App</a>
+{% endblock %}
+
+{% block rooms%}
+<div class="w3-container w3-margin-top" id="rooms">
+  <h3>Apartments</h3>
+  <p>View Apartments are based in the Dallas-Fort Worth Area.</p>
+</div>
+
+<form action="" target="_blank">
+    <div class="w3-row-padding" style="margin:0 -16px;">
+      <div class="w3-half w3-margin-bottom">
+        <label><i class="fa fa-calendar-o"></i> Check In</label>
+        <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckIn" required>
+      </div>
+      <div class="w3-half">
+        <label><i class="fa fa-calendar-o"></i> Check Out</label>
+        <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckOut" required>
+      </div>
+    </div>
+    <div class="w3-row-padding" style="margin:8px -16px;">
+      <div class="w3-half w3-margin-bottom">
+        <label><i class="fa fa-male"></i> Adults</label>
+        <input class="w3-input w3-border" type="number" value="1" name="Adults" min="1" max="6">
+      </div>
+      <div class="w3-half">
+        <label><i class="fa fa-child"></i> Kids</label>
+      <input class="w3-input w3-border" type="number" value="0" name="Kids" min="0" max="6">
+      </div>
+    </div>
+    <button class="w3-button w3-dark-grey" type="submit"><i class="fa fa-search w3-margin-right"></i> Search availability</button>
+  </form>
+{% endblock %}
+
+{% block about %}
+<div class="w3-row-padding" id="about">
+    <div class="w3-col l4 12">
+        <h3>About</h3>
+        <h6>The Apartment App, powered by Django and integrated with Leaflet for interactive mapping, redefines apartment searching by offering users a seamless and visually engaging platform. Built on Django's robust framework, it simplifies the search process with intuitive filters and comprehensive property details. Users can explore listings effortlessly, aided by precise location coordinates and detailed information. Administrators benefit from efficient property management tools, ensuring smooth operations and scalability. Overall, the Apartment App enhances the apartment search experience with its user-friendly interface and powerful backend, catering to both users and administrators alike.</h6>
+    </div>
+    <div class="w3-col l8 12">
+    <!-- Image of location/map -->
+    <img src="{% static 'imgs/dfw_map.jpg' %}" class="w3-image" style="width:800px; height:450px;">
+    </div>
+</div>
+{% endblock %}
+
+{% block map%}
+<div class="w3-col l8 12">
+<!-- Image of location/map -->
+<img src="{% static 'imgs/dfw_map.jpg' %}" class="w3-image" style="width:800px; height:450px;">
+</div>
+{% endblock %}
+
+{% block results %}
+<div class="w3-row-padding w3-padding-16">
+  <div class="w3-third w3-margin-bottom">
+    <img src="{% static 'imgs/one-bed-one-bath.png' %}" alt="Norway" style="width:485px; height:250px;">
+    <div class="w3-container w3-white">
+      <h3>Single Room</h3>
+      <h6 class="w3-opacity">From $99</h6>
+      <p>Single bed</p>
+      <p>15m<sup>2</sup></p>
+      <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i></p>
+      <button class="w3-button w3-block w3-black w3-margin-bottom">Choose Room</button>
+    </div>
+  </div>
+  <div class="w3-third w3-margin-bottom">
+    <img src="{% static 'imgs/two-bed-two-bath.png' %}" alt="Norway" style="width:485px; height:250px;">
+    <div class="w3-container w3-white">
+      <h3>Double Room</h3>
+      <h6 class="w3-opacity">From $149</h6>
+      <p>Queen-size bed</p>
+      <p>25m<sup>2</sup></p>
+      <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i></p>
+      <button class="w3-button w3-block w3-black w3-margin-bottom">Choose Room</button>
+    </div>
+  </div>
+  <div class="w3-third w3-margin-bottom">
+    <img src="{% static 'imgs/luxury-bed.png' %}" alt="Norway" style="width:485px; height:250px;">
+    <div class="w3-container w3-white">
+      <h3>Deluxe Room</h3>
+      <h6 class="w3-opacity">From $199</h6>
+      <p>King-size bed</p>
+      <p>40m<sup>2</sup></p>
+      <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
+      <button class="w3-button w3-block w3-black w3-margin-bottom">Choose Room</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block cities %}
+<div class="w3-container">
+  <h3>Locations</h3>
+  <h6>Cities where Apartments are located:</h6>
+</div>
+
+<div class="w3-row-padding w3-padding-16 w3-text-white w3-large">
+  <div class="w3-half w3-margin-bottom">
+    <div class="w3-display-container">
+      <img src="{% static 'imgs/dallas.jpg' %}" alt="Dallas" style="width:100%">
+      <span class="w3-display-bottomleft" style="color: white; padding: 5px; background-color: black; display: inline-block;"><b>Dallas</b></span>
+    </div>
+  </div>
+  <div class="w3-half">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <div class="w3-display-container">
+          <img src="{% static 'imgs/fortworth.jpg' %}" alt="Fort Worth" style="width:365px; height:250px;">
+          <span class="w3-display-bottomleft" style="color: white; padding: 5px; background-color: black; display: inline-block;"><b>Fort Worth</b></span>
+        </div>
+      </div>
+      <div class="w3-half w3-margin-bottom">
+        <div class="w3-display-container">
+          <img src="{% static 'imgs/grandprarie.jpg' %}" alt="Grand Prarie" style="width:365px; height:250px;">
+          <span class="w3-display-bottomleft" style="color: white; padding: 5px; background-color: black; display: inline-block;"><b>Grand Prarie</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <div class="w3-display-container">
+          <img src="{% static 'imgs/arlington.jpg' %}" alt="Arlington" style="width:365px; height:225px;">
+          <span class="w3-display-bottomleft" style="color: white; padding: 5px; background-color: black; display: inline-block;"><b>Arlington</b></span>
+        </div>
+      </div>
+      <div class="w3-half w3-margin-bottom">
+        <div class="w3-display-container">
+          <img src="{% static 'imgs/hurst.jpg' %}" alt="Hurst" style="width:365px; height:225px;">
+          <span class="w3-display-bottomleft" style="color: white; padding: 5px; background-color: black; display: inline-block;"><b>Hurst</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function myMap() {
+  myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+</script>
+{% endblock %}
