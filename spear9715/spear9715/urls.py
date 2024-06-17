@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', land_views.index, name='land_index'),
     path('sentimentanalysis/', sentiment_views.index, name='sentiment_index'),
-    path('apartmentdatabase/', aptdb_views.index, name='aptdb_index')
+    path('apartmentdatabase/', aptdb_views.index, name='aptdb_index'),
+    path('apartmentdatabase/search/', aptdb_views.search, name='aptdb_search')
 ]

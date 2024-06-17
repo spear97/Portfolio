@@ -1,0 +1,27 @@
+{% extends 'static/aptdb_static.html' %}
+{% load static %}
+
+{% block links %}
+<a href="{% url 'land_index' %}" class="w3-bar-item w3-button w3-cyan w3-mobile"><i class="w3-margin-right"></i>Home</a>
+<a href="{% url 'sentiment_index' %}" class="w3-bar-item w3-button w3-mobile">Sentiment Analysis App</a>
+{% endblock %}
+
+{% block results %}
+<div id="aptContainer" class="w3-row-padding w3-padding-16">
+  <!-- Room listings will be dynamically generated here -->
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var names = null;
+    var addresses = null;
+    var mins = null;
+    var maxs = null;
+    var links = null;
+    var imgs = null;
+    var numbers = null;
+</script>
+
+<script src="{% static 'scripts/listingscript.js'%}"></script>
+{% endblock %}
