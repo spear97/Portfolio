@@ -63,11 +63,15 @@ body, html {
 <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
 {% endblock %}
 
-{% block skills %}
-<p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
+{% block myskills %}
+{% for skill in skills %}
+<p class="w3-wide"><i class="fa fa-laptop"></i>{{ skill.name }}</p>
 <div class="w3-light-grey">
-  <div class="w3-container w3-padding-small w3-2019-eclipse w3-center" style="width:85%">85%</div>
+    <div class="w3-container w3-padding-small w3-2019-eclipse w3-center" style="width: {{ skill.percentage }}%">
+        {{ skill.percentage }}%
+    </div>
 </div>
+{% endfor %}
 {% endblock %}
 
 {% block portfoliogrid %}

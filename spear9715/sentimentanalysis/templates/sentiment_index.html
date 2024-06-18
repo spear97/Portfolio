@@ -88,7 +88,8 @@
 {% endblock %}
 
 {% block form %}
-<form action="" target="_blank">
+<form action="{% url 'sentiment_analysis' %}" method="POST">
+  {% csrf_token %}
   <div class="w3-row-padding" style="margin:0 -8px;">
     <!-- First Name Input -->
     <div class="w3-margin-bottom" style="display: flex; flex-direction: column;">
@@ -103,19 +104,19 @@
   </div>
   <br>
 
-  <!-- Results of the Analysis -->
-  {% if txt%}
+  {% if txt %}
   <div class="center" style="background: rgba(255, 255, 255, 0.7);">
-    <p style="color: rgb(31, 81, 255);"><b>The Result for {{txt}} is: </b>
+    <p style="color: rgb(31, 81, 255);"><b>The Result for {{ txt }} is: </b>
       {% if neg > neu and neg > pos %}
       <label><i class='fas fa-angry' style='font-size:24px;'></i> Negative</label>
       {% elif pos > neu and pos > neg %}
-      <label><i class='fas fa-grin-alt' style='font-size:24px;'></i> Postive</label>
+      <label><i class='fas fa-grin-alt' style='font-size:24px;'></i> Positive</label>
       {% else %}
       <label><i class='fas fa-meh' style='font-size:24px;'></i> Neutral</label>
       {% endif %}   
     </p>
   </div>
   {% endif %}
+
 </form>
 {% endblock %}
