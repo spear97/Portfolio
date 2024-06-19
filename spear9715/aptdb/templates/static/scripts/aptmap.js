@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var mapContainer = document.getElementById('mapid');
 
     // Create a map instance and set its center and zoom level
-    var map = L.map(mapContainer).setView([32.72930399616183, -97.11519679906151], 13);
+    var map = L.map(mapContainer).setView([32.69228989181367, -97.2802872509489], 11);
 
     // Add a tile layer to the map
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
