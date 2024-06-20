@@ -55,7 +55,7 @@ function generateRoomHTML(room) {
         <br>
         <p>Phone Number:</p>
         <p><u>${room.phone_number}</u></p> <!-- Phone number -->
-        <button class="info-button" onclick="redirectTo('')">Get More Info</button> <!-- Button to get more information -->
+        <button class="info-button" onclick="redirectTo('${room.url}')">Get More Info</button> <!-- Button to get more information -->
       </div>
     </div>
   `;
