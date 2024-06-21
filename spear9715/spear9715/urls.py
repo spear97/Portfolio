@@ -17,14 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import landing.views as land_views
-import sentimentanalysis.views as sentiment_views
-import aptdb.views as aptdb_views
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', land_views.index, name='land_index'),
-    path('sentimentanalysis/', sentiment_views.index, name='sentiment_index'),
-    path('sentimentanalysis/analysis', sentiment_views.sentiment_analysis, name='sentiment_analysis'),
-    path('apartmentdatabase/', aptdb_views.index, name='aptdb_index'),
-    path('apartmentdatabase/search/', aptdb_views.search, name='aptdb_search')
 ]
