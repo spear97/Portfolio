@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Sean Pearce Portfolio Website
+{% endblock title %}
+
+{% block header %}Sean's Homepage{% endblock header %}
+
+{% block stylesheets %}<link rel="stylesheet" href="{% static 'css/styles.css' %}">{% endblock stylesheets %}
+
+{% block content %}
+<h2>Welcome to My Website</h2>
+<p>This it is currently under construction. Please standby.</p>
+<img src="{% static 'images/kermit.jpg' %}" alt="Description of your image">
+{% endblock content %}
