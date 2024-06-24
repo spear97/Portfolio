@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Add any other installed apps here
+    'landing',
+    'aptdb',
 ]
 
 MIDDLEWARE = [
