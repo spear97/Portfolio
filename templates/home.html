@@ -5,12 +5,96 @@
 Sean Pearce Portfolio Website
 {% endblock title %}
 
-{% block header %}Sean's Homepage{% endblock header %}
+{% block links %}
+<a href="#home" class="w3-bar-item w3-button">HOME</a>
+<a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+<a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+<a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+{% endblock links %}
 
-{% block stylesheets %}<link rel="stylesheet" href="{% static 'css/styles.css' %}">{% endblock stylesheets %}
+{% block small-links %}
+<a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+<a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+{% endblock small-links %}
 
-{% block content %}
-<h2>Welcome to My Website</h2>
-<p>This it is currently under construction. Please standby.</p>
-<img src="{% static 'images/kermit.jpg' %}" alt="Description of your image">
-{% endblock content %}
+{% block logo %}<img src="{% static 'images/logo.png' %}" alt="Description of the image">{% endblock logo %}
+
+{% block stylesheets %}
+<style>
+    .w3-round {
+    border-radius: 50%;
+    overflow: hidden; /* Ensures the image stays within the rounded boundaries */
+    }
+
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+    body, html {
+      height: 100%;
+      color: #777;
+      line-height: 1.8;
+    }
+    
+    /* Create a Parallax Effect */
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    /* First image (Logo. Full height) */
+    .bgimg-1 {
+      background-image: url("{% static 'images/node_globe.gif' %}");
+      min-height: 100%;
+    }
+    
+    .w3-wide {letter-spacing: 10px;}
+    .w3-hover-opacity {cursor: pointer;}
+    
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1600px) {
+      .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+        min-height: 400px;
+      }
+    }
+</style>
+{% endblock stylesheets %}
+
+{% block catgif %}
+<img src="{% static 'images/binary_cat.gif' %}" class="w3-round w3-image" alt="Description of the image">
+{% endblock catgif %}
+
+{% block avatar %}
+<img src="{% static 'images/Sean.jpg' %}" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
+{% endblock avatar %}
+
+{% block scripts %}
+<script src="{% static 'scripts/landingscripts.js' %}"></script>
+{% endblock scripts %}
+
+{% block summary %}
+Howdy all! I'm Sean Pearce, an aspiring professional with a fervor for crafting immersive 
+digital experiences at the intersection of Game Development, Artificial Intelligence, and 
+Computer Graphics. With a solid foundation in IT Consulting, I bring a wealth of experience 
+in Object-Oriented Programming, Linux Development, Python Programming, and Cloud Development 
+just to name a few. This background uniquely positions me to bridge the gap between the strategic 
+demands of clients and the exciting innovations happening in the world of Game Development. I'm 
+enthusiastic about leveraging my expertise to not only deliver tailored IT solutions but also to 
+contribute to the creation of visually stunning and technologically advanced gaming experiences. 
+My fascination with Artificial Intelligence extends beyond the consulting realm. During my 
+undergraduate studies and my tenure in IT Consulting, I have explored and studied the various 
+different ways in which Machine Learning and Large Language Models could be used to bring a more 
+immersive environment for gamers everywhere to interact with. These skills and depth in knowledge 
+provide me a strong foundation for navigating the complexities of integrating AI into gaming environments. 
+{% endblock summary %}
+
+{% block summary2 %}
+Additionally, my experience my proficiencies modern-day game development tools such Unreal Engine, Unity, 
+and AutoDesk along with traditional software development skills such as Linux, Python, MFA/SSO, and Cloud 
+Development has positioned me to be able to contribute to the world of Computer Graphics in Game Development. 
+I'm excited about the prospect of blending my consulting insights with my passion for creating visually 
+captivating game environments. As I embark on this exciting journey, I'm eager to connect with professionals 
+who share a similar passion for the convergence of technology and creativity. Whether you're from the IT Consulting 
+sector or the gaming industry, let's explore how our collective expertise can drive innovation and excellence.
+{% endblock summary2 %}
