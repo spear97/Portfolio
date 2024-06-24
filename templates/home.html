@@ -18,10 +18,15 @@ Sean Pearce Portfolio Website
 <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
 {% endblock small-links %}
 
-{% block logo %}<img src="{% static 'images/logo.png' %}" alt="Description of the image">{% endblock logo %}
+{% block logo %}<img src="{% static 'images/logo.png' %}" style="width:100%; max-width:350px; max-height:250px;" alt="Description of the image" class="responsive-img">{% endblock logo %}
 
 {% block stylesheets %}
 <style>
+    .responsive-img {
+    max-width: 100%;
+    height: auto;
+    }
+
     .w3-round {
     border-radius: 50%;
     overflow: hidden; /* Ensures the image stays within the rounded boundaries */
