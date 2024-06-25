@@ -111,9 +111,9 @@
 
 {% block scripts %}
 <script>
-  //var namesData = JSON.parse('{{ names|escapejs }}');
-  //var addressData = JSON.parse('{{ address|escapejs }}');
-  //var coordsData = JSON.parse('{{ coords|escapejs }}');
+  var namesData = JSON.parse('{{ names|escapejs }}');
+  var addressData = JSON.parse('{{ address|escapejs }}');
+  var coordsData = JSON.parse('{{ coords|escapejs }}');
 </script>
 
 <script src="{% static 'scripts/aptmap.js' %}"></script>
