@@ -15,13 +15,13 @@
 
 {% block scripts %}
 <script>
-    //var names = JSON.parse('{{ names|escapejs }}');
-    //var addresses = JSON.parse('{{ addresses|escapejs }}');
-    //var mins = JSON.parse('{{ mins|escapejs }}');
-    //var maxs = JSON.parse('{{ maxs|escapejs }}');
-    //var links = JSON.parse('{{ links|escapejs }}');
-    //var imgs = JSON.parse('{{ imgs|escapejs }}');
-   //var numbers = JSON.parse('{{ numbers|escapejs }}');
+    var names = JSON.parse('{{ names|escapejs }}');
+    var addresses = JSON.parse('{{ addresses|escapejs }}');
+    var mins = JSON.parse('{{ mins|escapejs }}');
+    var maxs = JSON.parse('{{ maxs|escapejs }}');
+    var links = JSON.parse('{{ links|escapejs }}');
+    var imgs = JSON.parse('{{ imgs|escapejs }}');
+    var numbers = JSON.parse('{{ numbers|escapejs }}');
 </script>
 
 <script src="{% static 'scripts/aptlist.js'%}"></script>
