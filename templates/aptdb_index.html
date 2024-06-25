@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block banner %}
-<img class="responsive-image" src="{% static 'images/AptDB.png' %}" alt="The Hotel" style="min-width:1000px" width="1500" height="800">
+<img src="{% static 'images/AptDB.png' %}" style="width:100%; max-width:350px; max-height:250px;" alt="Description of the image" class="responsive-img">
 {% endblock %}
 
 {% block links %}
-<a href="" class="w3-bar-item w3-button w3-cyan w3-mobile"><i class="w3-margin-right"></i>Home</a>
+<a href="{% url 'home' %}" class="w3-bar-item w3-button w3-cyan w3-mobile"><i class="w3-margin-right"></i>Home</a>
 <a href="" class="w3-bar-item w3-button w3-mobile">Sentiment Analysis App</a>
 {% endblock %}
 
@@ -16,7 +16,7 @@
   <p>View Apartments are based in the Dallas-Fort Worth Area.</p>
 </div>
 
-<form action="" method="post">
+<form action="{% url 'aptdb_results' %}"method="post">
     {% csrf_token %}
     <div class="w3-row-padding" style="margin:0 -16px;">
       <div class="w3-half w3-margin-bottom">
@@ -53,7 +53,7 @@
         <h3>About</h3>
         <h6>The Apartment App, powered by Django and integrated with Leaflet for interactive mapping, redefines apartment searching by offering users a seamless and visually engaging platform. Built on Django's robust framework, it simplifies the search process with intuitive filters and comprehensive property details. Users can explore listings effortlessly, aided by precise location coordinates and detailed information. Administrators benefit from efficient property management tools, ensuring smooth operations and scalability. Overall, the Apartment App enhances the apartment search experience with its user-friendly interface and powerful backend, catering to both users and administrators alike.</h6>
     </div>
-    <div id="mapid" class="w3-col l8 12" style="width:800px; height:450px;">
+    <div id="mapid" class="w3-col l8 12" style="width:550px; height:350px;">
     <!-- Image of location/map -->
     </div>
 </div>
