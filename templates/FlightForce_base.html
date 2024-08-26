@@ -1,0 +1,63 @@
+{% extends 'FlightForce_static.html' %}
+{% load static %}
+
+{% block style %}
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("{% static 'images/takeoff.gif' %}");
+  min-height: 70%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+{% endblock %}
+
+{% block links %}
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="{% url 'home' %}" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block information %}
+<h2>Flight Force Calculator</h2>
+<form method="post">
+  {% csrf_token %}
+  <label for="weight">Weight (kg):</label>
+  <input type="number" id="weight" name="weight" required>
+
+  <label for="dragCoefficient">Drag Coefficient:</label>
+  <input type="number" step="0.01" id="dragCoefficient" name="dragCoefficient" required>
+
+  <label for="area">Wing Area (m²):</label>
+  <input type="number" step="0.01" id="area" name="area" required>
+
+  <label for="airDensity">Air Density (kg/m³):</label>
+  <input type="number" step="0.01" id="airDensity" name="airDensity" required>
+
+  <button type="submit">Calculate</button>
+</form>
+
+<div id="results" style="margin-top:20px;">
+  {% if takeoff_speed and required_force %}
+    <h3>Results:</h3>
+    <p>Takeoff Speed: {{ takeoff_speed }} m/s</p>
+    <p>Required Force: {{ required_force }} N</p>
+  {% elif error %}
+    <h3>Results:</h3>
+    <p style="color: red;">{{ error }}</p>
+  {% endif %}
+</div>
+{% endblock %}
