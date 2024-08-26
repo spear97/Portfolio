@@ -99,6 +99,13 @@ Sean Pearce Portfolio Website
       </a>
     </div>
 
+    <div class="w3-col m3">
+      <p>Currency Converter 2024</p>
+      <a href="{% url 'currency_converter' %}">
+        <img src="{% static 'images/currencyconverter.gif' %}" style="width:100%; max-width:200px; max-height:150px;" onclick="" class="w3-hover-opacity w3-round" alt="Apartment Datatbase">
+      </a>
+    </div>
+
     <!--
     <div class="w3-col m3">
       <p>Stock Market Prediction</p>
@@ -138,3 +145,20 @@ captivating game environments. As I embark on this exciting journey, I'm eager t
 who share a similar passion for the convergence of technology and creativity. Whether you're from the IT Consulting 
 sector or the gaming industry, let's explore how our collective expertise can drive innovation and excellence.
 {% endblock summary2 %}
+
+{% block msg_block %}
+<form action="" target="_blank">
+  <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+    <div class="w3-half">
+      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+    </div>
+    <div class="w3-half">
+      <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+    </div>
+  </div>
+  <textarea class="w3-input w3-border" placeholder="Message" required name="Message" rows="4" cols="50" style="resize: none;"></textarea>
+  <button class="w3-button w3-black w3-right w3-section" type="submit">
+    <i class="fa fa-paper-plane"></i> SEND MESSAGE
+  </button>
+</form>
+{% endblock msg_block %}

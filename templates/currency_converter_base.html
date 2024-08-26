@@ -1,0 +1,93 @@
+{% extends 'currency_converter_static.html' %}
+{% load static %}
+
+{%block stylesheet%}
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("{% static 'images/currencyconverter.gif' %}");
+  min-height: 50%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+{%endblock stylesheet%}
+
+{%block links%}
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    
+    <div class="w3-col s3">
+      <a href="{% url 'home' %}" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+
+  </div>
+</div>
+{%endblock links%}
+
+{%block information%}
+<form method="POST" action="{% url 'currency_converter' %}">
+  {% csrf_token %}
+  
+  <!-- Results Box -->
+  <div class="w3-card-4 w3-padding w3-white w3-center" style="margin-bottom:30px;">
+    <h2>Conversion Result</h2>
+      <p>
+      {% if result %}
+      {{result}}
+      {% else %}
+      Result will appear here...
+      {% endif %}
+      </p>
+  </div>
+
+  <!-- Two Boxes Side by Side -->
+  <div class="w3-row-padding" style="margin:0 -16px">
+    
+    <div class="w3-half">
+      <div class="w3-card-4 w3-padding w3-white w3-center">
+        <h2>Currency 1</h2>
+    
+        <!-- Dropdown Menu -->
+        <select class="w3-select" name="currency1">
+          <option value="" disabled selected>Select currency</option>
+          <option value="usd">USD - US Dollar</option>
+          <option value="eur">EUR - Euro</option>
+          <option value="gbp">GBP - British Pound</option>
+          <option value="jpy">JPY - Japanese Yen</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="w3-half">
+      <div class="w3-card-4 w3-padding w3-white w3-center">
+        <h2>Currency 2</h2>
+    
+        <!-- Dropdown Menu -->
+        <select class="w3-select" name="currency2">
+          <option value="" disabled selected>Select currency</option>
+          <option value="usd">USD - US Dollar</option>
+          <option value="eur">EUR - Euro</option>
+          <option value="gbp">GBP - British Pound</option>
+          <option value="jpy">JPY - Japanese Yen</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Submit Button -->
+  <div class="w3-center" style="margin-top:30px;">
+    <button class="w3-button w3-black w3-padding-large w3-round" type="submit">Convert Currency</button>
+  </div>
+</form>
+{%endblock information%}

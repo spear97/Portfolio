@@ -95,20 +95,7 @@
         <i class="fa fa-linkedin fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <a href="https://www.linkedin.com/in/shpearce" target="_blank">Linkedin Profile</a><br>
         <i class="fa fa-github fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <a href="https://github.com/spear97" target="_blank">GitHub Profile</a><br>
       </div>
-      <form action="" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-          </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-          </div>
-        </div>
-        <textarea class="w3-input w3-border" placeholder="Message" required name="Message" rows="4" cols="50" style="resize: none;"></textarea>
-        <button class="w3-button w3-black w3-right w3-section" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </form>
+      {% block msg_block %}{% endblock msg_block %}
     </div>
   </div>
 </div>
