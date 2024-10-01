@@ -1,6 +1,7 @@
 import json
 from django.core.management.base import BaseCommand
 from aptdb.models import Apt, Amounts, Info, Coords, Images
+from landing.models import Skills
 import os
 
 class Command(BaseCommand):
@@ -14,13 +15,15 @@ class Command(BaseCommand):
         info_data = list(Info.objects.values())
         coords_data = list(Coords.objects.values())
         img_data = list(Images.objects.values())
+        skill_data = list(Skills.objects.values())
 
         data_to_backup = {
             'Apt': apt_data,
             'Amounts': amounts_data,
             'Info': info_data,
             'Coords': coords_data,
-            'Images': img_data
+            'Images': img_data,
+            'Skills': skill_data,
         }
 
         # Serialize data to JSON

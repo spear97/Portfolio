@@ -1,6 +1,7 @@
 import json
 from django.core.management.base import BaseCommand
 from aptdb.models import Apt, Amounts, Info, Coords, Images
+from landing.models import Skills
 import os
 
 class Command(BaseCommand):
@@ -43,6 +44,11 @@ class Command(BaseCommand):
 
                     # Create a new Images instance associated with the newly created Apt
                     Images.objects.create(src=image[i]['src'], apt=new_apt)
+
+            skill = data["skills"]
+
+            for i in range(len(skill)):
+                Skills.objects.create(name=skill[i]['name'], percentage=skill[i]['percentage'])
 
 
         # Output that Backup of Data 

@@ -2136,5 +2136,107 @@
             "src": "https://images1.apartments.com/i2/6QoX_nEbUZxD-LlZYgFucyICSsS4BWqVz9ylLgKiSjw/111/steeplechase-fort-worth-tx-primary-photo.jpg?p=1",
             "apt_id": 76
         }
+    ],
+    "Skills": [
+        {
+            "id": 1,
+            "name": "Python",
+            "percentage": 80
+        },
+        {
+            "id": 2,
+            "name": "Django",
+            "percentage": 75
+        },
+        {
+            "id": 3,
+            "name": "Flask",
+            "percentage": 70
+        },
+        {
+            "id": 4,
+            "name": "Amazon Web Services (AWS)",
+            "percentage": 45
+        },
+        {
+            "id": 5,
+            "name": "IBM Cloud",
+            "percentage": 50
+        },
+        {
+            "id": 6,
+            "name": "Artificial Intelligence",
+            "percentage": 55
+        },
+        {
+            "id": 7,
+            "name": "C#",
+            "percentage": 45
+        },
+        {
+            "id": 8,
+            "name": "C++",
+            "percentage": 80
+        },
+        {
+            "id": 9,
+            "name": "Cascading Style Sheet (CSS)",
+            "percentage": 55
+        },
+        {
+            "id": 10,
+            "name": "HTML",
+            "percentage": 55
+        },
+        {
+            "id": 11,
+            "name": "GitHub",
+            "percentage": 65
+        },
+        {
+            "id": 12,
+            "name": "Identity Access Management (IAM)",
+            "percentage": 35
+        },
+        {
+            "id": 13,
+            "name": "PHP",
+            "percentage": 50
+        },
+        {
+            "id": 14,
+            "name": "Java",
+            "percentage": 60
+        },
+        {
+            "id": 15,
+            "name": "JavaScript",
+            "percentage": 55
+        },
+        {
+            "id": 16,
+            "name": "Linux",
+            "percentage": 45
+        },
+        {
+            "id": 17,
+            "name": "Object-Oriented Programming (OOP)",
+            "percentage": 70
+        },
+        {
+            "id": 18,
+            "name": "REST APIs",
+            "percentage": 70
+        },
+        {
+            "id": 19,
+            "name": "Unreal Engine",
+            "percentage": 80
+        },
+        {
+            "id": 20,
+            "name": "Unity",
+            "percentage": 75
+        }
     ]
 }
